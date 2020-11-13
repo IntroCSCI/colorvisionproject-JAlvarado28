@@ -43,16 +43,19 @@ int main()
       input += ", ";
       input += b;
       input += ")";
-    
+      
+      bool found_color=false;
       for (int i=0; i < (int)text.size(); i++ ){
         if(text[i].find(input) != -1){
           cout << text[i] << endl;
           i=(int)text.size();
+          found_color=true;
           
         }
-        
       }
-       
+      if (found_color==false){
+        cout << "Value is invalid" << endl;
+      } 
     }
     if (!reader.is_open()){
       cout << "Could not open file." << endl;
@@ -61,7 +64,7 @@ int main()
     cin >> choice;
     cin.ignore();
     reader.close();
-
+    
   }while( choice=='y');
   
 return 0;
