@@ -9,11 +9,12 @@ string hexValue ( int, string );
 char color_Shown(string);
 int main()
 {
+  //inputs
   string r, g, b;
   int lines, chars;
   string file, color;
   fstream reader; 
-  char choice;
+  char choices;
   string input;
   int color_value;
   string hex_value;
@@ -39,7 +40,7 @@ int main()
       // function dispays various colors and their type of color blindness
       color_Shown(typeOfBlindness);
       //  this portion sets up the part to find the value in the file 
-      cout << "Put in the value of the color that you see." <<endl;
+      cout << "Put in the value of the color that you want to see." <<endl;
       cin >> r;
       cin >> g;
       cin >> b;
@@ -66,22 +67,23 @@ int main()
         cout << "Value is invalid" << endl;
       } 
     }
-    // after finding th value, the user can play around with the hex converter
+    // after finding the value, the user can play around with the hex converter
     hexValue (color_value, hex_value);
     // this creates a loop for opening the file and restarting the program
     if (!reader.is_open()){
       cout << "Could not open file." << endl;
     }
     cout << "Analyze another color (y/n)?" << endl;
-    cin >> choice;
+    cin >> choices;
     cin.ignore();
     reader.close();
     
-  }while( choice=='y');
+  }while( choices=='y');
   
 return 0;
 }
  //converts a value into a hex
+ //int color_value will be set up for next delivereable inclucing a vector
 string hexValue ( int color_value, string hex_value){
   cout << "Enter a value that ranges from 0 to 255." << endl;
   cout << "It will convert it into a hex value." << endl;
@@ -110,7 +112,8 @@ char color_Shown(string typeOfBlindness){
   cout << "Press 'y' to continue.\n";
   char color_Shown;
   char choice;
-  
+  //this portion is where the if else statements are found 
+  // it dispays both the colors and gives the user feedback on what type of color blindness they have
  do{
     cin >> choice;
     if (choice == 'y'){
