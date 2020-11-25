@@ -104,50 +104,60 @@ string hexValue ( int color_value, string hex_value){
   // it then ties a false statement with type of blindness
 char color_Shown(string typeOfBlindness){
   cout << "This is the list of the different types of color blindness.\n";
-  string types [6]={ "tritanopia", "tritanomaly", "deuteranomaly", "protanomaly", "protanopia", "normal"};
+  string types [6]={ "tritanopia", "tritanomaly", "deuteranomaly", "protanomaly", "protanopia", "monochromacy"};
   for (int i=0; i<=5; i++){
     cout << types[i]  << endl;
     
   }
-  cout << "Press 'y' to continue.\n";
-  char color_Shown;
   char choice;
   //this portion is where the if else statements are found 
   // it dispays both the colors and gives the user feedback on what type of color blindness they have
  do{
+    printf("\u001b[0;34m" "This sentence has both colors: " "\u001b[0;32m" "blue and green." RESET  "\n");
+    cout << "(Y)es or (N)o\n";
     cin >> choice;
-    if (choice == 'y'){
-     printf("\u001b[0;34m" "This sentence has both colors:" "\u001b[0;32m" "blue and green." RESET  "\n");
-   }else if (choice == 'n'){
+    if (choice == 'y' || choice == 'Y'){
+     cout << "You have regular visoin.\n";
+   }else if (choice == 'n' || choice == 'N'){
      cout << "You might have tritanopia.\n";}
+  
+    printf("\u001b[0;33m" "This setence has both colors: " "\u001b[0;31m" "yellow and red." RESET  "\n");
     cin >> choice;
-    if (choice == 'y'){
-      printf("\u001b[0;33m" "This setence has both colors:" "\u001b[0;31m" "yellow and red." RESET  "\n");
-   }else if(choice == 'n'){
+    if (choice == 'y' || choice == 'Y'){
+      cout << "You have regular vision.\n";
+   }else if(choice == 'n' || choice == 'N'){
      cout << "You might have tritanomaly.\n";}
+
+    printf ("\u001b[0;31m" "This sentence has both colors: " "\u001b[0;32m" "red and green." RESET "\n");
     cin >> choice;
-    if (choice == 'y'){
-      printf ("\u001b[0;31m" "This sentence has both colors:" "\u001b[0;32m" "red and green." RESET "\n");
-   }else if (choice == 'n') {
+    if (choice == 'y' || choice == 'Y'){
+      cout << "You have regular vision.\n";
+   }else if (choice == 'n' || choice == 'N') {
       cout << "You might have deuteranomaly.\n";}
+
+    printf ("\u001b[0;31m" "This sentence has" "\u001b[0;32m" " both colors: " "\u001b[0;31m" "red and green." RESET "\n");
     cin >> choice;  
-   if (choice == 'y'){
-     printf ("\u001b[0;31m" "This sentence has both colors:" "\u001b[0;32m" "red and green." RESET "\n");
-    }else if (choice == 'n'){
+   if (choice == 'y' || choice == 'Y'){
+     cout << "You have regular vision.\n";
+    }else if (choice == 'n' || choice == 'N'){
       cout << "You might have protanomaly.\n";}
+
+    printf ("\u001b[0;32m" "This sentence has both colors: " "\u001b[0;31m" "green and red." RESET "\n");
     cin >> choice;  
-    if (choice == 'y'){
-      printf ("\u001b[0;32m" "This sentence has both colors:" "\u001b[0;31m" "green and red." RESET "\n");
-   }else if (choice == 'n'){
+    if (choice == 'y' || choice == 'Y'){
+      cout << "You have regular vision.\n";
+   }else if (choice == 'n' || choice == 'N'){
       cout << "You might have protanopia.\n";}
+
+    printf ("\u001b[0;36m" "This sentence has both colors: " "\u001b[0;35m" "cyan and magenta." RESET "\n");  
     cin >> choice;
-   if (choice == 'y'){
-      printf ("\u001b[0;36m" "This sentence has both colors:" "\u001b[0;35m" "cyan and magenta." RESET "\n");
-   }else if (choice == 'n'){
-      cout << "You have regular vision.";}
-    cin >> choice;
-    return choice;
- }while(choice != 'y' || choice!='n');
+   if (choice == 'y' || choice == 'Y'){
+      cout << "You have regular vision.\n";
+   }else if (choice == 'n' || choice == 'N'){
+      cout << "You might have  monochromacy.\n";}
+  }while(choice != 'y' && choice != 'Y' && choice != 'N' && choice != 'n');
+  return choice;
+ 
 }
 
 
